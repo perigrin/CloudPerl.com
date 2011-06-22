@@ -6,7 +6,12 @@ use Plack::Middleware::Magpie;
 
 sub to_app {
     builder {
-        enable "Magpie", resource => 'CloudPerl::Resource';
+        mount '/' => builder {
+            enable "Magpie", resource => 'CloudPerl::Resource::Default';
+        };
+        mount '/user' => builder {
+            enable "Magpie", resource => 'CloudPerl::Resource::User';
+        };
     };
 }
 
