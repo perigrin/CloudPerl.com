@@ -1,4 +1,4 @@
-package CloudPerl::Resource;
+package CloudPerl::Resource::Default;
 use Moose;
 extends 'Magpie::Resource';
 
